@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">BinaryHexConverter</string>
+    //Test strings
+    <string name="welcome">Welcome to my App</string>
+    <string name="second">Second page!</string>
+
+    //Input String
+    <string name="seqInputHint">Please enter a valid sequence</string>
+
+    //Convert
+    <string name="convert">Convert</string>
+
+    //Titles
+    <string name="binary">Binary</string>
+    <string name="decimal">Decimal</string>
+    <string name="hexadecimal">Hexadecimal</string>
+    <string name="octal">Octal</string>
+</resources>
