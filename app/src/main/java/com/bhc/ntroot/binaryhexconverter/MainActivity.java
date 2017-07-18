@@ -1,6 +1,7 @@
 package com.bhc.ntroot.binaryhexconverter;
 
 import android.content.Context;
+import android.support.annotation.StringDef;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.content.Intent;
@@ -11,12 +12,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
     private LinearLayout mainLayout;
     private EditText seqInputContainer;
+    private TextView errorDisplay;
     private TextView testDisplay1;
     private TextView testDisplay2;
     private TextView testDisplay3;
@@ -34,13 +35,17 @@ public class MainActivity extends AppCompatActivity {
                 goToSecondActivity();
             }
         });
-        */
+         */
 
         mainLayout = (LinearLayout)findViewById(R.id.linearLayoutBack);
 
         seqInputContainer = (EditText) findViewById(R.id.seqInput);
         seqInputContainer.setX(20);
         seqInputContainer.setY(150);
+
+        errorDisplay = (TextView)findViewById(R.id.error);
+        errorDisplay.setX(20);
+        errorDisplay.setY(300);
 
         testDisplay1 = (TextView)findViewById(R.id.seqDisplay1);
         testDisplay1.setX(20);
@@ -61,19 +66,26 @@ public class MainActivity extends AppCompatActivity {
         convert.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                displayInput();
+                if (checkIfValid()) {
+                    displayInput();
+                    errorDisplay.setText("");
+                } else {
+                    errorDisplay.setText("Invalid Sequence");
+                }
                 InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
                 imm.hideSoftInputFromWindow(mainLayout.getWindowToken(), 0);
             }
         });
     }
 
+    /*
     private void goToSecondActivity() {
 
         Intent intent = new Intent(this, SecondActivity.class);
         startActivity(intent);
 
     }
+    */
 
     private void displayInput() {
         final TextView tit1;
@@ -112,5 +124,16 @@ public class MainActivity extends AppCompatActivity {
         String convertToHex = Conversions.decimalToHex(tempInput);
         testDisplay3.setText(convertToHex);
         testDisplay3.setTextSize(15);
+    }
+
+    private boolean checkIfValid() {
+        String check = seqInputContainer.getText().toString();
+        check = check.toUpperCase();
+        if (check.charAt(0) < '0' || check.charAt(0) > 'Z') {
+            return false;
+        } else if (check.charAt(0) > '9' && check.charAt(0) < 'A') {
+            return false;
+        }
+        return true;
     }
 }
