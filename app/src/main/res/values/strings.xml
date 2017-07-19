@@ -1,8 +1,5 @@
 <resources>
     <string name="app_name">BinaryHexConverter</string>
-    //Test strings
-    <string name="welcome">Welcome to my App</string>
-    <string name="second">Second page!</string>
 
     //Input String
     <string name="seqInputHint">Please enter a valid sequence</string>
@@ -15,4 +12,8 @@
     <string name="decimal">Decimal</string>
     <string name="hexadecimal">Hexadecimal</string>
     <string name="octal">Octal</string>
+
+    //Error
+    <string name="error">Invalid Sequence</string>
+    <string name="title_activity_decimal">Decimal</string>
 </resources>
