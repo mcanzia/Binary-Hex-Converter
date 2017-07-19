@@ -8,14 +8,12 @@ import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button dec;
-    private Button bin;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Button dec;
         dec = (Button) findViewById(R.id.decButton);
         dec.setX(0);
         dec.setY(0);
@@ -26,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
+        Button bin;
         bin = (Button) findViewById(R.id.binButton);
         bin.setX(0);
         bin.setY(0);
