@@ -3,10 +3,7 @@ package com.bhc.ntroot.binaryhexconverter;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
@@ -22,7 +19,6 @@ public class Decimal extends AppCompatActivity {
     private TextView testDisplay1;
     private TextView testDisplay2;
     private TextView testDisplay3;
-    private Button back;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,13 +58,14 @@ public class Decimal extends AppCompatActivity {
                     displayInput();
                     errorDisplay.setText("");
                 } else {
-                    errorDisplay.setText("Invalid Sequence");
+                    errorDisplay.setText(R.string.error);
                 }
                 InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
                 imm.hideSoftInputFromWindow(mainLayout.getWindowToken(), 0);
             }
         });
 
+        Button back;
         back = (Button) findViewById(R.id.backBin);
         back.setY(1500);
         back.setOnClickListener(new View.OnClickListener() {
@@ -97,9 +94,9 @@ public class Decimal extends AppCompatActivity {
         tit3.setY(1200);
         tit3.setTextSize(25);
 
-        tit1.setText("Binary");
-        tit2.setText("Octal");
-        tit3.setText("Hexadecimal");
+        tit1.setText(R.string.binary);
+        tit2.setText(R.string.octal);
+        tit3.setText(R.string.hexadecimal);
 
 
         //Conversions

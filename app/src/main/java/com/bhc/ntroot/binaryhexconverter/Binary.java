@@ -19,7 +19,6 @@ public class Binary extends AppCompatActivity {
     private TextView testDisplay1;
     private TextView testDisplay2;
     private TextView testDisplay3;
-    private Button back;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,13 +58,14 @@ public class Binary extends AppCompatActivity {
                     displayInput();
                     errorDisplay.setText("");
                 } else {
-                    errorDisplay.setText("Invalid Sequence");
+                    errorDisplay.setText(R.string.error);
                 }
                 InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
                 imm.hideSoftInputFromWindow(mainLayout.getWindowToken(), 0);
             }
         });
 
+        Button back;
         back = (Button) findViewById(R.id.backBin);
         back.setY(1500);
         back.setOnClickListener(new View.OnClickListener() {
@@ -94,9 +94,9 @@ public class Binary extends AppCompatActivity {
         tit3.setY(1200);
         tit3.setTextSize(25);
 
-        tit1.setText("Decimal");
-        tit2.setText("Octal");
-        tit3.setText("Hexadecimal");
+        tit1.setText(R.string.decimal);
+        tit2.setText(R.string.octal);
+        tit3.setText(R.string.hexadecimal);
 
 
         //Conversions
