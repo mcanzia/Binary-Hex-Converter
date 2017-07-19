@@ -2,85 +2,65 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/gridLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.bhc.ntroot.binaryhexconverter.MainActivity">
 
-    <LinearLayout
-        android:id="@+id/linearLayoutBack"
-        android:layout_width="0dp"
-        android:layout_height="495dp"
-        android:orientation="horizontal"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="8dp"></LinearLayout>
-
-    <EditText
-        android:id="@+id/seqInput"
-        android:layout_width="282dp"
-        android:layout_height="40dp"
-        android:ems="10"
-        android:hint="@string/seqInputHint"
-        android:inputType="textPersonName"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="25dp" />
-
     <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/convert"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="80dp" />
-
-    <TextView
-        android:id="@+id/seqDisplay1"
-        android:layout_width="366dp"
-        android:layout_height="42dp"
-        android:fontFamily="serif"
-        android:inputType="textNoSuggestions"
-        tools:layout_editor_absoluteX="14dp"
-        tools:layout_editor_absoluteY="196dp" />
-
-    <TextView
-        android:id="@+id/title1"
-        android:layout_width="170dp"
-        android:layout_height="38dp"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="147dp" />
-
-    <TextView
-        android:id="@+id/title2"
-        android:layout_width="170dp"
-        android:layout_height="37dp"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="246dp" />
-
-    <TextView
-        android:id="@+id/title3"
-        android:layout_width="172dp"
-        android:layout_height="36dp"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="343dp" />
-
-    <TextView
-        android:id="@+id/seqDisplay2"
-        android:layout_width="363dp"
-        android:layout_height="41dp"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="294dp" />
-
-    <TextView
-        android:id="@+id/seqDisplay3"
-        android:layout_width="363dp"
-        android:layout_height="38dp"
-        tools:layout_editor_absoluteX="15dp"
-        tools:layout_editor_absoluteY="389dp" />
+        android:id="@+id/decButton"
+        style="@style/Widget.AppCompat.Button.Borderless.Colored"
+        android:layout_width="193dp"
+        android:layout_height="257dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:background="@android:color/holo_red_light"
+        android:fontFamily="casual"
+        android:text="@string/decimal"
+        android:textColor="@android:color/background_light"
+        android:textStyle="bold"
+        app:layout_constraintHorizontal_bias="0.888"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/binButton"
+        tools:layout_constraintBaseline_creator="1"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_editor_absoluteY="0dp"
+        android:layout_marginTop="0dp"
+        app:layout_constraintTop_toBottomOf="parent" />
 
     <android.support.constraint.Guideline
+        android:id="@+id/guideline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/guideline2"
-        app:layout_constraintGuide_begin="147dp"
-        android:orientation="horizontal" />
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="192dp"
+        tools:layout_editor_absoluteY="0dp"
+        tools:layout_editor_absoluteX="192dp" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="255dp"
+        tools:layout_editor_absoluteY="255dp"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <Button
+        android:id="@+id/binButton"
+        style="@style/Widget.AppCompat.Button.Borderless.Colored"
+        android:layout_width="0dp"
+        android:layout_height="257dp"
+        android:background="?android:attr/colorPressedHighlight"
+        android:fontFamily="casual"
+        android:text="@string/binary"
+        android:textColor="@android:color/background_light"
+        android:textStyle="bold"
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintRight_creator="1"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="@+id/guideline"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

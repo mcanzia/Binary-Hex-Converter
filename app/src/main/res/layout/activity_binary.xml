@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.bhc.ntroot.binaryhexconverter.Binary"
+    tools:layout_editor_absoluteY="81dp"
+    tools:layout_editor_absoluteX="0dp">
+
+    <LinearLayout
+        android:id="@+id/linearLayoutBack"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="8dp"
+        tools:ignore="MissingConstraints"></LinearLayout>
+
+    <EditText
+        android:id="@+id/seqInput"
+        android:layout_width="282dp"
+        android:layout_height="40dp"
+        android:ems="10"
+        android:hint="@string/seqInputHint"
+        android:inputType="textPersonName"
+        android:layout_marginStart="7dp"
+        tools:layout_editor_absoluteY="25dp"
+        tools:layout_editor_absoluteX="7dp"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/convert"
+        android:layout_marginStart="7dp"
+        tools:layout_editor_absoluteX="7dp"
+        tools:layout_editor_absoluteY="80dp"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/seqDisplay1"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:fontFamily="sans-serif"
+        android:inputType="textNoSuggestions"
+        tools:layout_editor_absoluteY="201dp"
+        tools:layout_editor_absoluteX="16dp"
+        tools:ignore="MissingConstraints,TextViewEdits" />
+
+    <TextView
+        android:id="@+id/title1"
+        android:layout_width="0dp"
+        android:layout_height="38dp"
+        tools:layout_editor_absoluteY="152dp"
+        tools:layout_editor_absoluteX="16dp"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/title2"
+        android:layout_width="0dp"
+        android:layout_height="37dp"
+        android:layout_marginEnd="2dp"
+        tools:layout_editor_absoluteY="251dp"
+        tools:layout_editor_absoluteX="16dp"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/title3"
+        android:layout_width="172dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="7dp"
+        tools:layout_editor_absoluteY="350dp"
+        tools:layout_editor_absoluteX="7dp"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/seqDisplay2"
+        android:layout_width="0dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        tools:layout_editor_absoluteY="303dp"
+        tools:layout_editor_absoluteX="16dp"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/seqDisplay3"
+        android:layout_width="0dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        tools:layout_editor_absoluteY="394dp"
+        tools:layout_editor_absoluteX="15dp"
+        tools:ignore="MissingConstraints" />
+
+    <android.support.constraint.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/guideline2"
+        app:layout_constraintGuide_begin="147dp"
+        android:orientation="horizontal"
+        tools:layout_editor_absoluteY="147dp"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <TextView
+        android:id="@+id/error"
+        android:layout_width="176dp"
+        android:layout_height="33dp"
+        android:textStyle="bold"
+        android:layout_marginStart="104dp"
+        android:layout_marginEnd="104dp"
+        tools:layout_editor_absoluteX="119dp"
+        tools:layout_editor_absoluteY="80dp"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/backBin"
+        android:layout_width="51dp"
+        android:layout_height="44dp"
+        android:background="@android:drawable/ic_menu_revert"
+        android:backgroundTint="@android:color/black"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="483dp"
+        tools:ignore="MissingConstraints" />
+
+</android.support.constraint.ConstraintLayout>
