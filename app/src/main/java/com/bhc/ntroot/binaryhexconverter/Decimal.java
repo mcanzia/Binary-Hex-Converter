@@ -57,8 +57,6 @@ public class Decimal extends AppCompatActivity {
                 if (checkIfValid()) {
                     displayInput();
                     errorDisplay.setText("");
-                } else {
-                    errorDisplay.setText(R.string.error);
                 }
                 InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
                 imm.hideSoftInputFromWindow(mainLayout.getWindowToken(), 0);
@@ -116,14 +114,17 @@ public class Decimal extends AppCompatActivity {
     }
 
     private boolean checkIfValid() {
-        String check = seqInputContainer.getText().toString();
-        check = check.toUpperCase();
-        if (check.charAt(0) < '0' || check.charAt(0) > 'Z') {
-            return false;
-        } else if (check.charAt(0) > '9' && check.charAt(0) < 'A') {
+        try {
+            long check = Long.parseLong(seqInputContainer.getText().toString());
+            if (check > Integer.MAX_VALUE) {
+                errorDisplay.setText(R.string.errorTooLarge);
+                return false;
+            }
+            return true;
+        } catch (NumberFormatException e) {
+            errorDisplay.setText(R.string.error);
             return false;
         }
-        return true;
     }
 
     private void goToBack() {

@@ -15,5 +15,6 @@
 
     //Error
     <string name="error">Invalid Sequence</string>
+    <string name="errorTooLarge">Sequence Too Large</string>
     <string name="title_activity_decimal">Decimal</string>
 </resources>

@@ -15,8 +15,6 @@ public class MainActivity extends AppCompatActivity {
 
         Button dec;
         dec = (Button) findViewById(R.id.decButton);
-        dec.setX(0);
-        dec.setY(0);
         dec.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -26,12 +24,28 @@ public class MainActivity extends AppCompatActivity {
 
         Button bin;
         bin = (Button) findViewById(R.id.binButton);
-        bin.setX(0);
-        bin.setY(0);
         bin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 goToBinary();
+            }
+        });
+
+        Button oct;
+        oct = (Button) findViewById(R.id.octButton);
+        oct.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                goToOctal();
+            }
+        });
+
+        Button hex;
+        hex = (Button) findViewById(R.id.hexButton);
+        hex.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                goToHex();
             }
         });
 
@@ -47,6 +61,20 @@ public class MainActivity extends AppCompatActivity {
     private void goToBinary() {
 
         Intent intent = new Intent(this, Binary.class);
+        startActivity(intent);
+
+    }
+
+    private void goToOctal() {
+
+        Intent intent = new Intent(this, Octal.class);
+        startActivity(intent);
+
+    }
+
+    private void goToHex() {
+
+        Intent intent = new Intent(this, Hex.class);
         startActivity(intent);
 
     }

@@ -10,66 +10,38 @@
     <Button
         android:id="@+id/decButton"
         style="@style/Widget.AppCompat.Button"
-        android:layout_width="193dp"
-        android:layout_height="257dp"
-        android:layout_marginLeft="8dp"
+        android:layout_width="176dp"
+        android:layout_height="269dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="0dp"
         android:background="@drawable/button_1"
         android:fontFamily="casual"
         android:text="@string/decimal"
         android:textColor="@android:color/background_light"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintHorizontal_bias="0.888"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@+id/binButton"
-        app:layout_constraintTop_toBottomOf="parent"
-        tools:layout_constraintBaseline_creator="1"
-        tools:layout_constraintRight_creator="1"
+        tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="0dp" />
-
-    <android.support.constraint.Guideline
-        android:id="@+id/guideline"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_begin="192dp"
-        tools:layout_editor_absoluteY="0dp"
-        tools:layout_editor_absoluteX="192dp" />
-
-    <android.support.constraint.Guideline
-        android:id="@+id/guideline3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_begin="255dp" />
 
     <Button
         android:id="@+id/binButton"
         style="@style/Widget.AppCompat.Button"
-        android:layout_width="193dp"
-        android:layout_height="257dp"
+        android:layout_width="186dp"
+        android:layout_height="269dp"
         android:background="@drawable/button_2"
         android:fontFamily="casual"
         android:text="@string/binary"
         android:textColor="@android:color/background_light"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintLeft_toLeftOf="@+id/guideline"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_constraintLeft_creator="1"
-        tools:layout_constraintRight_creator="1"
-        tools:layout_constraintTop_creator="1" />
+        app:layout_constraintRight_toLeftOf="parent"
+        android:layout_marginRight="-384dp"
+        tools:layout_editor_absoluteY="0dp" />
 
     <Button
         android:id="@+id/octButton"
         style="@style/Widget.AppCompat.Button"
-        android:layout_width="193dp"
-        android:layout_height="257dp"
-        android:layout_marginBottom="-511dp"
-        android:layout_marginLeft="-384dp"
+        android:layout_width="176dp"
+        android:layout_height="292dp"
         android:background="@drawable/button_3"
         android:fontFamily="casual"
         android:text="@string/octal"
@@ -78,22 +50,26 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="parent"
         app:layout_constraintLeft_toRightOf="parent"
-        tools:layout_editor_absoluteY="256dp" />
+        tools:layout_editor_absoluteY="219dp"
+        android:layout_marginLeft="-384dp"
+        android:layout_marginBottom="-511dp" />
 
     <Button
         android:id="@+id/hexButton"
         style="@style/Widget.AppCompat.Button"
-        android:layout_width="193dp"
-        android:layout_height="257dp"
-        android:layout_marginBottom="0dp"
-        android:layout_marginRight="0dp"
+        android:layout_width="187dp"
+        android:layout_height="292dp"
         android:background="@drawable/button_4"
         android:fontFamily="casual"
         android:text="@string/hexadecimal"
         android:textColor="@android:color/background_light"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="parent"
-        app:layout_constraintRight_toLeftOf="parent" />
+        android:layout_marginRight="0dp"
+        android:layout_marginBottom="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:layout_editor_absoluteX="197dp"
+        tools:layout_editor_absoluteY="219dp" />
 
 </android.support.constraint.ConstraintLayout>

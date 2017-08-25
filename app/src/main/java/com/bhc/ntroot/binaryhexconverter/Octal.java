@@ -2,8 +2,8 @@ package com.bhc.ntroot.binaryhexconverter;
 
 import android.content.Context;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
@@ -11,7 +11,7 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-public class Binary extends AppCompatActivity {
+public class Octal extends AppCompatActivity {
 
     private LinearLayout mainLayout;
     private EditText seqInputContainer;
@@ -95,7 +95,7 @@ public class Binary extends AppCompatActivity {
         tit3.setTextSize(25);
 
         tit1.setText(R.string.decimal);
-        tit2.setText(R.string.octal);
+        tit2.setText(R.string.binary);
         tit3.setText(R.string.hexadecimal);
 
 
@@ -103,12 +103,12 @@ public class Binary extends AppCompatActivity {
         String tempString = seqInputContainer.getText().toString();
         int tempInt = Integer.parseInt(tempString);
 
-        int convertToDecimal = Conversions.binaryToDecimal(tempString);
+        int convertToDecimal = Conversions.octalToDecimal(tempInt);
         testDisplay1.setText(convertToDecimal + "");
         testDisplay1.setTextSize(15);
 
-        String convertToOctal = Conversions.decimalToOctal(convertToDecimal);
-        testDisplay2.setText(convertToOctal);
+        String convertToBinary = Conversions.decimalToBinary(convertToDecimal);
+        testDisplay2.setText(convertToBinary);
         testDisplay2.setTextSize(15);
 
         String convertToHex = Conversions.decimalToHex(convertToDecimal);

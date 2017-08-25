@@ -18,6 +18,8 @@
         </activity>
         <activity android:name=".Binary" />
         <activity android:name=".Decimal" />
+        <activity android:name=".Octal" />
+        <activity android:name=".Hex" />
     </application>
 
 </manifest>
