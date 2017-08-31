@@ -57,8 +57,6 @@ public class Hex extends AppCompatActivity {
                 if (checkIfValid()) {
                     displayInput();
                     errorDisplay.setText("");
-                } else {
-                    errorDisplay.setText(R.string.error);
                 }
                 InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
                 imm.hideSoftInputFromWindow(mainLayout.getWindowToken(), 0);
@@ -116,14 +114,36 @@ public class Hex extends AppCompatActivity {
     }
 
     private boolean checkIfValid() {
-        String check = seqInputContainer.getText().toString();
-        check = check.toUpperCase();
-        if (check.charAt(0) < '0' || check.charAt(0) > 'Z') {
-            return false;
-        } else if (check.charAt(0) > '9' && check.charAt(0) < 'A') {
+        try {
+            //Takes the hex string input value for reference
+            String check = seqInputContainer.getText().toString();
+
+            //Checks the size to make sure it is smaller than the max int value
+            if (check.length() > 8 || check.compareTo("7fffffff") == 1) {
+                errorDisplay.setText(R.string.errorTooLarge);
+                return false;
+            }
+
+            //Checks for correct syntax
+            for (int i = 0; i < check.length(); i++) {
+                if (check.charAt(i) < '0' || check.charAt(i) > 'f') {
+                    errorDisplay.setText(R.string.error);
+                    return false;
+                }
+                else if (check.charAt(i) > '9' && check.charAt(i) < 'A') {
+                    errorDisplay.setText(R.string.error);
+                    return false;
+                }
+                else if (check.charAt(i) > 'F' && check.charAt(i) < 'a') {
+                    errorDisplay.setText(R.string.error);
+                    return false;
+                }
+            }
+            return true;
+        } catch (NumberFormatException e) {
+            errorDisplay.setText(R.string.error);
             return false;
         }
-        return true;
     }
 
     private void goToBack() {

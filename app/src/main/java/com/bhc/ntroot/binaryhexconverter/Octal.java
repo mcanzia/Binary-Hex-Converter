@@ -57,8 +57,6 @@ public class Octal extends AppCompatActivity {
                 if (checkIfValid()) {
                     displayInput();
                     errorDisplay.setText("");
-                } else {
-                    errorDisplay.setText(R.string.error);
                 }
                 InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
                 imm.hideSoftInputFromWindow(mainLayout.getWindowToken(), 0);
@@ -117,14 +115,22 @@ public class Octal extends AppCompatActivity {
     }
 
     private boolean checkIfValid() {
-        String check = seqInputContainer.getText().toString();
-        check = check.toUpperCase();
-        if (check.charAt(0) < '0' || check.charAt(0) > 'Z') {
-            return false;
-        } else if (check.charAt(0) > '9' && check.charAt(0) < 'A') {
+        try {
+            //Takes the octal input value for reference
+            String temp = seqInputContainer.getText().toString();
+            long check = Long.parseLong(temp);
+
+            //Checks the size to make sure it is smaller than the max int value
+            if (temp.length() > 11 || temp.compareTo("17777777777") == 1) {
+                errorDisplay.setText(R.string.errorTooLarge);
+                return false;
+            }
+            return true;
+        } catch (NumberFormatException e) {
+            //Checks for correct syntax
+            errorDisplay.setText(R.string.error);
             return false;
         }
-        return true;
     }
 
     private void goToBack() {
