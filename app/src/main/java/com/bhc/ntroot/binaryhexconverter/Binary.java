@@ -57,8 +57,6 @@ public class Binary extends AppCompatActivity {
                 if (checkIfValid()) {
                     displayInput();
                     errorDisplay.setText("");
-                } else {
-                    errorDisplay.setText(R.string.error);
                 }
                 InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
                 imm.hideSoftInputFromWindow(mainLayout.getWindowToken(), 0);
@@ -101,7 +99,6 @@ public class Binary extends AppCompatActivity {
 
         //Conversions
         String tempString = seqInputContainer.getText().toString();
-        int tempInt = Integer.parseInt(tempString);
 
         int convertToDecimal = Conversions.binaryToDecimal(tempString);
         testDisplay1.setText(convertToDecimal + "");
@@ -117,14 +114,28 @@ public class Binary extends AppCompatActivity {
     }
 
     private boolean checkIfValid() {
-        String check = seqInputContainer.getText().toString();
-        check = check.toUpperCase();
-        if (check.charAt(0) < '0' || check.charAt(0) > 'Z') {
-            return false;
-        } else if (check.charAt(0) > '9' && check.charAt(0) < 'A') {
+        try {
+            //Takes the binary string input value for reference
+            String check = seqInputContainer.getText().toString();
+
+            //Checks the size to make sure it is smaller than the max int value
+            if (check.length() > 31 || check.compareTo("1111111111111111111111111111111") == 1) {
+                errorDisplay.setText(R.string.errorTooLarge);
+                return false;
+            }
+
+            //Checks for correct syntax
+            for (int i = 0; i < check.length(); i++) {
+                if (check.charAt(i) < '0' || check.charAt(i) > '1') {
+                    errorDisplay.setText(R.string.error);
+                    return false;
+                }
+            }
+            return true;
+        } catch (NumberFormatException e) {
+            errorDisplay.setText(R.string.error);
             return false;
         }
-        return true;
     }
 
     private void goToBack() {
